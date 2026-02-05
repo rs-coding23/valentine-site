@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<title>Happy Valentine's Day Babe❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<!-- Intro music (first screen) -->
+<audio id="introMusic" loop>
+    <source src="intro.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Main background music -->
+<audio id="bgMusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<canvas id="fireworksCanvas"></canvas>
+
+<!-- Background Music -->
+<audio loop id="bgMusic">
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<div id="passwordScreen" class="password-screen">
+    <h2>Enter Our Secret Password ❤️</h2>
+    <input type="password" id="passwordInput" placeholder="Enter password">
+    <div style="margin-top:15px;">
+    <button onclick="playIntroMusic()">🔊 Play Music</button>
+    <button onclick="stopIntroMusic()">🔇 Mute</button>
+</div>
+
+    <button onclick="checkPassword()">Enter</button>
+    <p id="wrongPass"></p>
+</div>
+
+<div class="container" id="mainContent" style="display:none;">
+
+
+<h1 class="luxury-title">Happy Valentine’s Day ❤️</h1>
+
+
+<!-- Typing Love Letter -->
+<p id="loveLetter" class="letter"></p>
+
+<!-- Photo Gallery -->
+<h2>Our Memories 📸</h2>
+
+
+<div class="gallery">
+
+<div class="photo-box spotlight-box">
+    <img src="photo1.jpeg" class="spotlight-img">
+</div>
+
+<div class="photo-box spotlight-box">
+    <img src="photo2.jpeg" class="spotlight-img">
+</div>
+
+<div class="photo-box spotlight-box">
+    <img src="photo3.jpeg" class="spotlight-img">
+</div>
+
+<div class="photo-box spotlight-box">
+    <img src="photo4.jpeg" class="spotlight-img">
+</div>
+
+</div>
+
+<h2>Our Journey Together 💕</h2>
+
+<div class="timeline">
+
+<div class="event">
+<h3>First Meet</h3>
+<p>Write your story here...</p>
+</div>
+
+<div class="event">
+<h3>First Date</h3>
+<p>Write your memory here...</p>
+</div>
+
+<div class="event">
+<h3>Special Moment</h3>
+<p>Write something emotional here...</p>
+</div>
+
+</div>
+
+
+<!-- Valentine Buttons -->
+<h2>Will you be my Valentine?</h2>
+
+<button id="yesBtn">Yes 😍</button>
+<button id="noBtn">No 🙈</button>
+
+<p id="response"></p>
+
+</div>
+
+<!-- Full Screen Love Letter -->
+<!-- Full Screen Love Letter -->
+<div id="letterScreen" class="letter-screen">
+
+    <!-- Moving memories background -->
+    <div class="memory-strip">
+    <div class="memory-track">
+        <!-- ORIGINAL SET -->
+        <img src="bg1.jpg">
+        <img src="bg2.jpg">
+        <img src="bg3.jpg">
+        <img src="bg4.jpg">
+        <img src="bg5.jpg">
+        <img src="bg6.jpg">
+
+        <!-- DUPLICATE (IMPORTANT) -->
+        <img src="bg1.jpg">
+        <img src="bg2.jpg">
+        <img src="bg3.jpg">
+        <img src="bg4.jpg">
+        <img src="bg5.jpg">
+        <img src="bg6.jpg">
+    </div>
+</div>
+
+
+    <!-- Letter on top -->
+    <img src="letter.jpg" class="letter-img" alt="Love Letter">
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

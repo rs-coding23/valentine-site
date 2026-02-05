@@ -1,0 +1,285 @@
+body {
+    margin:0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg,#4a0d1f,#0f0f0f);
+    color:white;
+    text-align:center;
+    min-height:100vh;
+}
+
+
+
+.photo-box{
+    position:relative;
+    width:200px;
+    height:200px;
+    overflow:hidden;
+    border-radius:15px;
+}
+
+.photo-box img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    filter: blur(6px) brightness(70%);
+    transition:0.6s;
+}
+
+/* Reveal image on hover */
+.photo-box:hover img{
+    filter: blur(0px) brightness(100%);
+    transform: scale(1.1);
+}
+
+.spotlight-box {
+    position:relative;
+    width:200px;
+    height:200px;
+    overflow:hidden;
+    border-radius:15px;
+}
+
+.spotlight-img {
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+    filter: brightness(40%);
+    transition:0.3s;
+}
+
+
+/* Romantic overlay text */
+.overlay{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    background:rgba(0,0,0,0.6);
+    color:white;
+    padding:10px;
+    font-size:14px;
+    opacity:0;
+    transition:0.6s;
+}
+
+.photo-box:hover .overlay{
+    opacity:1;
+}
+
+.luxury-title{
+    font-family:'Playfair Display', serif;
+    font-size:48px;
+    background: linear-gradient(45deg,#ffd700,#fff2a8);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    letter-spacing:2px;
+    text-shadow:0 0 15px rgba(255,215,0,0.4);
+    animation: glowPulse 3s infinite;
+}
+
+@keyframes glowPulse{
+    0%{ text-shadow:0 0 10px rgba(255,215,0,0.3); }
+    50%{ text-shadow:0 0 25px rgba(255,215,0,0.8); }
+    100%{ text-shadow:0 0 10px rgba(255,215,0,0.3); }
+}
+
+h2,h3{
+    font-family:'Playfair Display', serif;
+    color:#ffd7e0;
+}
+
+.container {
+    padding:30px;
+    backdrop-filter: blur(8px);
+    background: rgba(255,255,255,0.05);
+    border-radius:20px;
+    margin:40px auto;
+    width:80%;
+    box-shadow:0 0 40px rgba(255,0,80,0.15);
+}
+
+
+.password-screen {
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+.password-screen input {
+    padding:10px;
+    margin:10px;
+    border-radius:10px;
+}
+
+.gallery {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+    margin-top:20px;
+}
+
+.gallery img {
+    width:200px;
+    height:200px;
+    object-fit:cover;
+    border-radius:15px;
+    transition:0.3s;
+}
+
+.gallery img:hover {
+    transform:scale(1.1);
+}
+
+.letter {
+    font-size:18px;
+    width:60%;
+    margin:auto;
+    min-height:80px;
+}
+
+.timeline {
+    width:60%;
+    margin:auto;
+    margin-top:30px;
+}
+
+.event {
+    background:white;
+    padding:15px;
+    margin:15px;
+    border-left:5px solid red;
+    border-radius:10px;
+    text-align:left;
+}
+
+button {
+    padding:12px 26px;
+    margin:12px;
+    border:none;
+    border-radius:30px;
+    cursor:pointer;
+    font-size:16px;
+    font-family:'Poppins';
+    transition:0.3s;
+}
+
+#yesBtn{
+    background: linear-gradient(45deg,#ff4d6d,#c9184a);
+    color:white;
+    box-shadow:0 0 15px rgba(255,0,90,0.5);
+}
+
+#yesBtn:hover{
+    transform:scale(1.1);
+}
+
+#noBtn{
+    background:#444;
+    color:white;
+}
+
+
+#fireworksCanvas{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+}
+
+/* Full Screen Letter Reveal */
+
+
+@keyframes letterZoom{
+    from{
+        transform:scale(0.95);
+        opacity:0;
+    }
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+.password-screen button{
+    margin:5px;
+    padding:8px 18px;
+    border-radius:20px;
+    border:none;
+    cursor:pointer;
+}
+
+/* Moving memory background */
+
+
+
+/* Letter on top */
+
+.letter-img{
+    position:relative;
+    z-index:2;
+    max-width:80%;
+    max-height:90%;
+    border-radius:12px;
+    box-shadow:0 0 50px rgba(255,215,180,0.45);
+    animation: letterZoom 3s ease forwards;
+}
+
+/* ---------- LETTER OVERLAY ---------- */
+.letter-screen{
+    position: fixed;
+    inset: 0;
+    background: rgba(10,10,10,0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1.5s ease;
+    z-index: 9999;
+}
+
+/* ---------- MOVING BACKGROUND ---------- */
+.memory-strip{
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.memory-track{
+    display: flex;
+    height: 100%;
+    width: calc(260px * 12); /* 6 images × 2 */
+    animation: scrollMemories 60s linear infinite;
+}
+
+.memory-track img{
+    width: 260px;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(6px) brightness(40%);
+    flex-shrink: 0;
+}
+
+/* PERFECT LOOP */
+@keyframes scrollMemories{
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+}
+
+/* ---------- LETTER ON TOP ---------- */
+.letter-img{
+    position: relative;
+    z-index: 2;
+    max-width: 80%;
+    max-height: 90%;
+    border-radius: 12px;
+    box-shadow: 0 0 50px rgba(255,215,180,0.45);
+    animation: letterZoom 3s ease forwards;
+}

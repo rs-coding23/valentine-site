@@ -1,0 +1,55 @@
+body {
+    margin:0;
+    font-family: Arial;
+    background: linear-gradient(to right,#ff9a9e,#fad0c4);
+    text-align:center;
+}
+
+.container {
+    padding:30px;
+}
+
+.gallery {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+    margin-top:20px;
+}
+
+.gallery img {
+    width:200px;
+    height:200px;
+    object-fit:cover;
+    border-radius:15px;
+    transition:0.3s;
+}
+
+.gallery img:hover {
+    transform:scale(1.1);
+}
+
+.letter {
+    font-size:18px;
+    width:60%;
+    margin:auto;
+    min-height:80px;
+}
+
+button {
+    padding:10px 20px;
+    margin:10px;
+    border:none;
+    border-radius:20px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+#yesBtn {
+    background:red;
+    color:white;
+}
+
+#noBtn {
+    background:gray;
+}
