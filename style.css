@@ -147,13 +147,33 @@ h2,h3{
 }
 
 .event {
-    background:white;
-    padding:15px;
-    margin:15px;
-    border-left:5px solid red;
-    border-radius:10px;
-    text-align:left;
+    background: rgba(255,255,255,0.08);   /* dark glass look */
+    padding: 18px;
+    margin: 18px auto;
+    border-left: 6px solid #ff2e4d;       /* red line */
+    border-radius: 12px;
+    text-align: left;
+    color: #ffe3e8;                        /* readable text */
+    width: 80%;
 }
+
+.event h3{
+    color: #ff6b81;      /* romantic red heading */
+    margin-bottom: 6px;
+}
+
+.event p{
+    color: #ffd7e0;      /* soft readable paragraph */
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+.event:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 0 18px rgba(255,0,80,0.25);
+    transition: 0.3s;
+}
+
 
 button {
     padding:12px 26px;
@@ -263,7 +283,7 @@ button {
     width: 260px;
     height: 100%;
     object-fit: cover;
-    filter: blur(6px) brightness(40%);
+    filter: blur(2px) brightness(50%);
     flex-shrink: 0;
 }
 
